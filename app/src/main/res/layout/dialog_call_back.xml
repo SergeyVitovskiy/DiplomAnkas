@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:padding="10dp">
+    <!-- Текстовка -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Обратный звонок"
+        android:textColor="@color/colorGreen"
+        android:textSize="20sp" />
+    <!-- Текстовка -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Закажите обратный звонок и в ближайшее время вам перезвонит первый же освободившийся специалист." />
+    <!-- Имя -->
+    <LinearLayout
+        android:id="@+id/layout_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/border_gray"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:hint="Ваше имя *" />
+    </LinearLayout>
+    <!-- Телефон -->
+    <LinearLayout
+        android:id="@+id/layout_tell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/border_gray"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/txt_tell"
+            android:layout_width="match_parent"
+            android:inputType="phone"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:hint="+7 (XXX) XXX-XX-XX *" />
+    </LinearLayout>
+    <!-- Сообшение -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/border_gray"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/txt_message"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/colorWhite"
+            android:gravity="start"
+            android:hint="Ваше сообщение*" />
+    </LinearLayout>
+    <!-- Текстовка -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Нажимая ''Заказать'', я даю согласие на обработку моих персональных данных." />
+    <!-- Текстовка -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Обращаем ваше внимание, что услуга «Обратный звонок» доступна только в рабочие часы компании. Если вы оставили заявку в нерабочее время, она будет обработана в начале следующего рабочего дня..." />
+    <!-- Закрыть -->
+    <LinearLayout
+        android:id="@+id/layout_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/border_gray"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Закрыть" />
+    </LinearLayout>
+    <!-- Отправить -->
+    <LinearLayout
+        android:id="@+id/layout_push"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGreen"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Отправить"
+            android:textColor="@color/colorWhite" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray"
+    tools:context=".CategoryAndProductActivity">
+
+
+    <ScrollView
+        android:id="@+id/scrollView_Content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+            <!-- Обратный звонок -->
+            <include layout="@layout/call_back" />
+
+            <TextView
+                android:id="@+id/txt_title_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:padding="5dp"
+                android:text="Оборудование для Мини АЗС"
+                android:textColor="@color/colorGreen"
+                android:textSize="20sp" />
+
+            <!-- Категории -->
+            <LinearLayout
+                android:id="@+id/linearLayout_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <!-- Категории товаров -->
+                <com.sikdev.diplomankas.CommonComponents.ExpandedGridView
+                    android:id="@+id/grid_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:horizontalSpacing="4dp"
+                    android:layout_marginTop="4dp"
+                    android:numColumns="2"
+                    android:verticalSpacing="4dp" />
+            </LinearLayout>
+            <!-- Товары -->
+            <LinearLayout
+                android:id="@+id/linearLayout_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/txt_productQuantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Товары (487 шт.)" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite">
+                        <!-- Фильтер -->
+                        <LinearLayout
+                            android:id="@+id/layout_filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border_gray_1dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="24dp"
+                                android:layout_marginLeft="5dp"
+                                app:srcCompat="@drawable/ico_filter" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="24dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:gravity="center"
+                                android:text="Фильтровать"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                        <!-- Сортировка -->
+                        <LinearLayout
+                            android:id="@+id/layout_sort"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="0dp"
+                            android:background="@drawable/border_gray_1dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="24dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:gravity="center"
+                                android:text="Сортировать"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                </LinearLayout>
+                <!-- Товары -->
+                <com.sikdev.diplomankas.CommonComponents.ExpandedGridView
+                    android:id="@+id/grid_product"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="1"
+                    android:scrollbars="none"
+                    android:verticalSpacing="4dp" />
+            </LinearLayout>
+
+            <!-- Нижнее меню -->
+            <include layout="@layout/bottom_menu" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Верхнее меню -->
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/toolbar" />
+
+</RelativeLayout>

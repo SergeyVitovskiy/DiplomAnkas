@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+        <!-- Логотип -->
+        <LinearLayout
+            android:id="@+id/layout_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="7dp"
+                app:srcCompat="@drawable/ico_logo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:fontFamily="@font/russo_one_regular"
+                android:text="Анкас"
+                android:textColor="@color/colorGreen"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Кнопки верхнего меню -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorDarkGray" />
+            <!-- Поиск -->
+            <ImageView
+                android:id="@+id/item_toolBar_search"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:srcCompat="@drawable/ico_search" />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorDarkGray" />
+
+            <ImageView
+                android:id="@+id/item_toolBar_basket"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:srcCompat="@drawable/ico_basket" />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorDarkGray" />
+
+            <ImageView
+                android:id="@+id/item_toolBar_user"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:padding="11dp"
+                app:srcCompat="@drawable/ico_user" />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorDarkGray" />
+
+            <ImageView
+                android:id="@+id/item_toolBar_menu"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:srcCompat="@drawable/ico_menu" />
+        </LinearLayout>
+    </RelativeLayout>
+    <!-- Поиск -->
+    <LinearLayout
+        android:id="@+id/linearLayout_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_toStartOf="@+id/search_cancel">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    app:srcCompat="@drawable/ico_search" />
+
+                <EditText
+                    android:id="@+id/eText_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="0dp"
+                    android:background="@color/colorWhite"
+                    android:hint="Найти среди 28 000 товаров" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/search_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:gravity="center"
+                android:text="Отмена"
+                android:textColor="@color/colorBlue" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/gradient_gray_transporent_bottom"
+                android:fillViewport="true"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_searchMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:text="Введите название товара или категории"
+                    android:gravity="center" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout_searchResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_categorySearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:text="Категории" />
+                    <!-- Категории -->
+                    <com.sikdev.diplomankas.CommonComponents.ExpandedGridView
+                        android:id="@+id/grid_categorySearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:numColumns="1"
+                        android:scrollbars="none" />
+
+                    <TextView
+                        android:id="@+id/txt_productSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:text="Товары" />
+                    <!-- Товары -->
+                    <com.sikdev.diplomankas.CommonComponents.ExpandedGridView
+                        android:id="@+id/grid_productSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:numColumns="1"
+                        android:scrollbars="none" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <!-- Нижнее подчеркивание -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="36dp"
+        android:background="@color/colorDarkGray" />
+    <!-- Меню -->
+    <LinearLayout
+        android:id="@+id/layout_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="38dp"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <!-- Каталог -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ico_right_arrow"
+            android:padding="10dp"
+            android:text="Каталог"
+            android:textSize="16sp" />
+        <!-- Получение и оплата -->
+        <TextView
+            android:id="@+id/receiptAndPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ico_right_arrow"
+            android:padding="10dp"
+            android:text="Получение и оплата"
+            android:textSize="16sp" />
+        <!-- Контакты -->
+        <TextView
+            android:id="@+id/contacts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Контакты"
+            android:textSize="16sp" />
+        <!-- Связь с нами в Челябинске -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/colorVaryDarkGray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Связь с нами в Челябинске" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ico_tell" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="+7 (351) 751-40-35 - Горелки и запчасти"
+                    android:textColor="@color/colorVaryDarkGray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ico_tell" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="+7 (351) 750-18-86 - Станки"
+                    android:textColor="@color/colorVaryDarkGray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    app:srcCompat="@drawable/ico_watch" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="СЕГОДНЯ ВЫХОДНОЙ."
+                            android:textColor="@color/colorGreen" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="Режим работы:"
+                            android:textColor="@color/colorVaryDarkGray" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="ПН-ПТ с 9:00 до 20:00"
+                        android:textColor="@color/colorVaryDarkGray" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorVaryDarkGray" />
+        </LinearLayout>
+        <!-- Сервис и поддержка -->
+        <TextView
+            android:id="@+id/serviceAndSupport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ico_right_arrow"
+            android:padding="10dp"
+            android:text="Сервис и поддержка"
+            android:textSize="16sp" />
+        <!-- Оформление заказов -->
+        <TextView
+            android:id="@+id/makingOrders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ico_right_arrow"
+            android:padding="10dp"
+            android:text="Оформление заказов"
+            android:textSize="16sp" />
+        <!-- Информация -->
+        <TextView
+            android:id="@+id/information"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ico_right_arrow"
+            android:padding="10dp"
+            android:text="Информация"
+            android:textSize="16sp" />
+        <!-- Информация -->
+        <TextView
+            android:id="@+id/company"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ico_right_arrow"
+            android:padding="10dp"
+            android:text="Компания"
+            android:textSize="16sp" />
+    </LinearLayout>
+</RelativeLayout>

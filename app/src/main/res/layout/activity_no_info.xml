@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Info.NoInfoActivity">
+
+
+    <ScrollView
+        android:id="@+id/scrollView_Content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+            <!-- Номера телефонов -->
+            <include layout="@layout/call_back" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Нет информации"
+                android:textColor="@color/colorGreen"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:text="Текст у этого раздела скоро появится. Мы только-только обновили сайт и нас очень поджимали сроки. Скоро все разместим. Спасибо за терпение)  " />
+            <!-- Нижнее меню -->
+            <include layout="@layout/bottom_menu" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Верхнее меню -->
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/toolbar" />
+
+</LinearLayout>

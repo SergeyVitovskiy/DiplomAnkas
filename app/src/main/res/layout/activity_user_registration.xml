@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorGray"
+    android:layout_height="match_parent"
+    tools:context=".User.UserActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView_Content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+            <!-- Номера телефонов -->
+            <include layout="@layout/call_back" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/colorWhite"
+                android:padding="5dp">
+                <!-- Текстовка -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Авторизация"
+                    android:textColor="@color/colorGreen"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Для входа введите свою почту и пароль" />
+                <!-- Имя -->
+                <LinearLayout
+                    android:id="@+id/layout_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/border_gray"
+                    android:padding="10dp">
+
+                    <EditText
+                        android:id="@+id/txt_name"
+                        android:layout_width="match_parent"
+                        android:maxLines="1"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:hint="Ваше имя *" />
+                </LinearLayout>
+                <!-- Телефон -->
+                <LinearLayout
+                    android:id="@+id/layout_tell"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/border_gray"
+                    android:padding="10dp">
+
+                    <EditText
+                        android:id="@+id/txt_tell"
+                        android:layout_width="match_parent"
+                        android:inputType="phone"
+                        android:maxLines="1"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:hint="+7 (XXX) XXX-XX-XX *" />
+                </LinearLayout>
+                <!-- Почта -->
+                <LinearLayout
+                    android:id="@+id/layout_mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/border_gray"
+                    android:padding="10dp">
+
+                    <EditText
+                        android:id="@+id/txt_mail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:background="@color/colorWhite"
+                        android:hint="Почта *" />
+                </LinearLayout>
+                <!-- Пароль -->
+                <LinearLayout
+                    android:id="@+id/layout_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/border_gray"
+                    android:padding="10dp">
+
+                    <EditText
+                        android:id="@+id/txt_password"
+                        android:layout_width="match_parent"
+                        android:maxLines="1"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:hint="Пароль *" />
+                </LinearLayout>
+                <!-- Пароль -->
+                <LinearLayout
+                    android:id="@+id/layout_passwordReplay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/border_gray"
+                    android:padding="10dp">
+
+                    <EditText
+                        android:id="@+id/txt_passwordReplay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:maxLines="1"
+                        android:hint="Повтор пароль *" />
+                </LinearLayout>
+                <!-- Отправить -->
+                <LinearLayout
+                    android:id="@+id/layout_push"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/colorGreen"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Зарегистрироваться"
+                        android:textColor="@color/colorWhite" />
+                </LinearLayout>
+                <!-- Закрыть -->
+                <LinearLayout
+                    android:id="@+id/layout_authorization"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/border_gray"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="У меня уже есть профиль" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Нижнее меню -->
+            <include layout="@layout/bottom_menu" />
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/toolbar" />
+</RelativeLayout>

@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray"
+    tools:context=".ProductActivity">
+
+
+    <ScrollView
+        android:id="@+id/scrollView_Content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!-- Номера телефонов -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <include layout="@layout/call_back" />
+            </LinearLayout>
+            <!-- Название и изображение -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/colorWhite"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/txt_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Название, название"
+                    android:textSize="20sp" />
+
+                <com.sikdev.diplomankas.CommonComponents.MySliderImage
+                    android:id="@+id/slider_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:background="@color/colorWhite" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+                <!-- Код на сайте и артикул -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <!-- Код нв сайте -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/border_gray_1dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp"
+                            android:adjustViewBounds="true"
+                            android:padding="5dp"
+                            app:srcCompat="@drawable/ico_code" />
+
+                        <TextView
+                            android:id="@+id/txt_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp"
+                            android:layout_marginRight="5dp"
+                            android:gravity="center"
+                            android:text="код: 0"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                    <!-- Артикул -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/border_gray_1dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp"
+                            android:adjustViewBounds="true"
+                            android:padding="5dp"
+                            app:srcCompat="@drawable/ico_article" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp"
+                            android:layout_marginRight="5dp"
+                            android:gravity="center"
+                            android:text="артикул: 0"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- Бренд -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/border_gray_1dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:adjustViewBounds="true"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/ico_brand" />
+
+                    <TextView
+                        android:id="@+id/txt_brand"
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center"
+                        android:text="Название, страна"
+                        android:textSize="12sp" />
+                </LinearLayout>
+                <!-- Цена и купить -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="bottom"
+                        android:text="Цена: 999 999 999 ₽"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_txt_by"
+                        android:layout_width="160dp"
+                        android:layout_height="36dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="5dp"
+                        android:background="@color/colorGreen">
+
+                        <TextView
+                            android:id="@+id/txt_by"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:gravity="center"
+                            android:text="Купить"
+                            android:textColor="@color/colorWhite" />
+                    </LinearLayout>
+                </RelativeLayout>
+                <!-- Наличие -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:padding="2dp"
+                        app:srcCompat="@drawable/ico_map" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:gravity="center"
+                        android:text="В наличии: Челябинск" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:padding="2dp"
+                        app:srcCompat="@drawable/ico_truck" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:gravity="center"
+                        android:text="Очень быстрая доставка в г. Челябинск" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:padding="2dp"
+                        app:srcCompat="@drawable/ico_point" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:gravity="center"
+                        android:text="Самовымоз в " />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:gravity="center"
+                        android:text="г. Челябинск, ул. Газизулина, 2Б"
+                        android:textColor="@color/colorBlue" />
+                </LinearLayout>
+                <!-- Нашли дешевле, Заказать в 1 клик -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/text_foundCheaper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border_gray_1dp"
+                        android:padding="5dp"
+                        android:text="Нашли дешевле" />
+
+                    <TextView
+                        android:id="@+id/text_orderOneClick"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/border_gray_1dp"
+                        android:padding="5dp"
+                        android:text="Заказать в 1 клик" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Описание"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_characteristics"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Характеристики"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_file"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:visibility="gone"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Файлы"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <!-- Описание -->
+            <LinearLayout
+                android:id="@+id/layout_tab_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Описание товара"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/txt_descriptionProduct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="Название" />
+            </LinearLayout>
+            <!-- Характеристики -->
+            <LinearLayout
+                android:id="@+id/layout_tab_characteristics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Основные характеристики товара"
+                    android:textSize="20sp" />
+
+                <com.sikdev.diplomankas.CommonComponents.ExpandedGridView
+                    android:id="@+id/grid_characteristics"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <!-- Файлы -->
+            <LinearLayout
+                android:id="@+id/layout_tab_file"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="Файлы и инструкции"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="Название" />
+            </LinearLayout>
+            <!-- Текстовка -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorVaryDarkGray"
+                android:padding="5dp"
+                android:textSize="12sp"
+                android:text="* Технические характеристики и комплект поставки могут быть изменены производителем без предварительного уведомления."/>
+            <TextView
+                android:id="@+id/txt_errorMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlue"
+                android:padding="5dp"
+                android:text="Сообщить об ошибке в описании"/>
+            <!-- Нижнее меню -->
+            <include layout="@layout/bottom_menu" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Верхнее меню -->
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/toolbar" />
+
+</RelativeLayout>

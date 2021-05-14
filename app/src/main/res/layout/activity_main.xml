@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView_Content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+            <!-- Номера телефонов -->
+            <include layout="@layout/call_back"/>
+            <!-- Баннер -->
+            <com.sikdev.diplomankas.CommonComponents.MySliderImage
+                android:id="@+id/slider_image_banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@color/colorWhite" />
+            <!-- Категории товаров -->
+            <com.sikdev.diplomankas.CommonComponents.ExpandedGridView
+                android:id="@+id/grid_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:horizontalSpacing="4dp"
+                android:verticalSpacing="4dp"
+                android:numColumns="2"/>
+            <!-- Текстовка -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/colorVaryDarkGray"
+                android:text="На официальном сайте компании АНКАС, вы можете приобрести любое оборудование, представленное в каталоге компании. Для каждого товара у нас выгодные цены с максимально точным и подробным описанием, а также полными характеристиками и собственными фотографиями." />
+            <!-- Нижнее меню -->
+            <include layout="@layout/bottom_menu"/>
+        </LinearLayout>
+    </ScrollView>
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/toolbar"/>
+</RelativeLayout>
